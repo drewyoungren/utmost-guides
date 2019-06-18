@@ -48,21 +48,25 @@ along with MathBook XML.  If not, see <http://www.gnu.org/licenses/>.
         </macros>
     </docinfo>
 
-    <article xml:id="minimal">
-        <title>A Minimal Article</title>
+    <article xml:id="uig">
+        <title>UTMOST Instructors Guide</title>
 
         <frontmatter>
 
             <titlepage>
                 <author>
-                    <personname>Robert A. Beezer</personname>
-                    <institution>University of Puget Sound</institution>
+                    <personname>Vilma Mesa</personname>
+                    <institution>University of Michigan</institution>
+                </author>
+                <author>
+                    <personname>Drew C Youngren</personname>
+                    <institution>Columbia University</institution>
                 </author>
                 <date><today /></date>
             </titlepage>
 
             <abstract>
-                <p>This is a very short article, but it still exercises some advanced features of MathBook XML.</p>
+                <p>This guide is intended for faculty who have adopted a PreTeXt-authored open textbook for their class, particularly for those in the UTMOST study. It includes ideas for integrating common PreTeXt features into teaching practices as well as specific guides </p>
             </abstract>
 
         </frontmatter>
@@ -72,24 +76,24 @@ along with MathBook XML.  If not, see <http://www.gnu.org/licenses/>.
         </introduction>
 
         <section xml:id="section-textual">
-            <title>Just Some Text</title>
+            <title>Common PreTeXt Features</title>
 
-            <p>Now a single paragraph inside a titled section of the article.</p>
-        </section>
+            <introduction>Not every textbook implements all of this, and not all in an identical way, but this is meant to highlight some basicapabilities for integrating a structured text into the everyday teaching of a class. </introduction>
 
-        <section xml:id="section-interesting">
-            <title>A Bit More Interesting</title>
+            <subsection xml:id="subsection-Linking">
+            <title>Judicious Linking</title>
+            <p>The defining feature of hypertext and, perhaps, the web in general is the ability to link from one resource to another. The structure of PreTeXt is ripe for such, both internally, as you regularly see with exercises citing theorems and sections referenceing previous sections, but can also be done externally. 
+            </p>
 
-            <p>The previous section (<xref ref="section-textual" />) was a bit boring.</p>
+            <p>To grab the URL for a <b>Section</b>, simply navigate to the section and copy the URL in your browser's address bar.</p>open the knowl, by clicking the link, then right-click the "In-Context" link at the bottom right and use your browser's "Copy Address Location" feature.
 
-            <p>This paragraph has some inline math, a Diophantine equation, <m>x^2 + \doubler{y^2} = z^2</m>.  And some display math about infinite series: <me>\sum_{n=1}^\infty\,\frac{1}{n^2} = \frac{\pi^2}{6}.</me>  Look at the XML source to see how <latex /> macros are employed universally across all possible output formats.</p>
-        </section>
+            <p>To link to a specific theorem, definition, etc., find it in the index, </p> 
 
-        <section xml:id="section-computation">
-            <title>Computation</title>
+            </subsection>
+            <subsection xml:id="subsection-sage-cells">
+            <title>Sage Advise</title>
 
-            <p>The following is a chunk of Sage code.  Your output format will dictate what you see next.  In print, you will see expected output.  In HTML you will have an executable, and editable, Sage Cell to work with.  In a SageMathCloud worksheet, you will be able to execute and edit the code with all the other features of SageMathCloud.  Note that if you include the expected output in your source, then you can test the example to verify that the behavior of Sage has not changed.</p> 
-
+            <p>Seriously, these things are great.</p>
             <sage>
                 <input>
                 A = matrix(4,5, srange(20))
@@ -108,6 +112,33 @@ along with MathBook XML.  If not, see <http://www.gnu.org/licenses/>.
                 plot3d(x^2+y^2,(x,0,2),(y,0,2))
                 </input>
             </sage>
+
+            </subsection>
+        </section>
+
+        <section xml:id="section-utmost-books">
+            <title>UTMOST-specific Guide</title>
+
+            <p><i>This guide is intended for instructors at test-sites participating in the UTMOST project (hence the use of second-person). It may not be relevant to a general audience.</i></p> 
+
+            <p>Being open source textbooks, there may be several (maybe dozens) of implementations of your textbook on the open web. It is <b>very important</b> you and your students use the AIM-hosted version of the text:
+
+            <ul>
+                <li><a href="https://books.aimath.org/fcla/">A First Course in Linear Algebra</a></li>
+                <li><a href="https://books.aimath.org/aata/">Abstract AlgebraTheory and Applications</a></li>
+                <li><a href="https://books.aimath.org/ac/">Active Calculus</a></li>
+            </ul>
+            </p>
+
+            <p>This paragraph has some inline math, a Diophantine equation, <m>x^2 + \doubler{y^2} = z^2</m>.  And some display math about infinite series: <me>\sum_{n=1}^\infty\,\frac{1}{n^2} = \frac{\pi^2}{6}.</me>  Look at the XML source to see how <latex /> macros are employed universally across all possible output formats.</p>
+        </section>
+
+        <section xml:id="section-computation">
+            <title>Computation</title>
+
+            <p>The following is a chunk of Sage code.  Your output format will dictate what you see next.  In print, you will see expected output.  In HTML you will have an executable, and editable, Sage Cell to work with.  In a SageMathCloud worksheet, you will be able to execute and edit the code with all the other features of SageMathCloud.  Note that if you include the expected output in your source, then you can test the example to verify that the behavior of Sage has not changed.</p> 
+
+            
         </section>
 
     </article>

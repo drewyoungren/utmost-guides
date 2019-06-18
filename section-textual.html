@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-06-17T18:49:35-04:00    *-->
+<!--*    on 2019-06-18T11:30:12-04:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -9,7 +9,7 @@
 <html lang="en-US">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Just Some Text</title>
+<title>Common PreTeXt Features</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
 <script src="https://sagecell.sagemath.org/static/jquery.min.js"></script><script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
@@ -35,7 +35,15 @@ MathJax.Hub.Config({
         mtextFontInherit: true,
     },
 });
-</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script src="https://aimath.org/knowl.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.sticky.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.1/pretext.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Evaluate (Sage)'});
+});
+</script><script src="https://aimath.org/knowl.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.sticky.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.1/pretext.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
 <link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
 <link href="https://aimath.org/mathbook/stylesheets/mathbook-3.css" rel="stylesheet" type="text/css">
 <link href="https://aimath.org/mathbook/mathbook-add-on2.css" rel="stylesheet" type="text/css">
@@ -48,29 +56,47 @@ MathJax.Hub.Config({
 \)</div>
 <header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
 <a id="logo-link" href=""></a><div class="title-container">
-<h1 class="heading"><a href="minimal.html"><span class="title">A Minimal Article</span></a></h1>
-<p class="byline">Robert A. Beezer</p>
+<h1 class="heading"><a href="uig.html"><span class="title">UTMOST Instructors Guide</span></a></h1>
+<p class="byline">Vilma Mesa, Drew C Youngren</p>
 </div>
 </div></div>
 <nav id="primary-navbar" class="navbar"><div class="container">
 <div class="navbar-top-buttons">
-<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="minimal.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="minimal.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="section-interesting.html" title="Next">Next</a></span></div>
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="uig.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="uig.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="section-utmost-books.html" title="Next">Next</a></span></div>
 <button class="sidebar-right-toggle-button button active">Annotations</button>
 </div>
 <div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
-<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="minimal.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="minimal.html" title="Up">Up</a><a class="next-button button toolbar-item" href="section-interesting.html" title="Next">Next</a>
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="uig.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="uig.html" title="Up">Up</a><a class="next-button button toolbar-item" href="section-utmost-books.html" title="Next">Next</a>
 </div>
 </div></nav></header><div class="page">
 <div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
 <nav id="toc"><h2 class="link"><a href="frontmatter-1.html" data-scroll="frontmatter-1"><span class="title">Front Matter</span></a></h2>
-<h2 class="link active"><a href="section-textual.html" data-scroll="section-textual"><span class="codenumber">1</span> <span class="title">Just Some Text</span></a></h2>
-<h2 class="link"><a href="section-interesting.html" data-scroll="section-interesting"><span class="codenumber">2</span> <span class="title">A Bit More Interesting</span></a></h2>
+<h2 class="link active"><a href="section-textual.html" data-scroll="section-textual"><span class="codenumber">1</span> <span class="title">Common PreTeXt Features</span></a></h2>
+<ul>
+<li><a href="section-textual.html#subsection-Linking" data-scroll="subsection-Linking">Judicious Linking</a></li>
+<li><a href="section-textual.html#subsection-sage-cells" data-scroll="subsection-sage-cells">Sage Advise</a></li>
+</ul>
+<h2 class="link"><a href="section-utmost-books.html" data-scroll="section-utmost-books"><span class="codenumber">2</span> <span class="title">UTMOST-specific Guide</span></a></h2>
 <h2 class="link"><a href="section-computation.html" data-scroll="section-computation"><span class="codenumber">3</span> <span class="title">Computation</span></a></h2></nav><div class="extras"><nav><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
 </div></div>
 <main class="main"><div id="content" class="mathbook-content"><section class="section" id="section-textual"><h2 class="heading hide-type">
-<span class="type">Section</span> <span class="codenumber">1</span> <span class="title">Just Some Text</span>
+<span class="type">Section</span> <span class="codenumber">1</span> <span class="title">Common PreTeXt Features</span>
 </h2>
-<a href="section-textual.html" class="permalink">¶</a><p id="p-3">Now a single paragraph inside a titled section of the article.</p></section></div></main>
+<a href="section-textual.html" class="permalink">¶</a><section class="introduction" id="introduction-2"></section><section class="subsection" id="subsection-Linking"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">1.1</span> <span class="title">Judicious Linking</span>
+</h3>
+<a href="section-textual.html#subsection-Linking" class="permalink">¶</a><p id="p-3">The defining feature of hypertext and, perhaps, the web in general is the ability to link from one resource to another. The structure of PreTeXt is ripe for such, both internally, as you regularly see with exercises citing theorems and sections referenceing previous sections, but can also be done externally.</p>
+<p id="p-4">To grab the URL for a Section, simply navigate to the section and copy the URL in your browser's address bar.</p>
+<p id="p-5">To link to a specific theorem, definition, etc., find it in the index,</p></section><section class="subsection" id="subsection-sage-cells"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">1.2</span> <span class="title">Sage Advise</span>
+</h3>
+<a href="section-textual.html#subsection-sage-cells" class="permalink">¶</a><p id="p-6">Seriously, these things are great.</p>
+<div class="sagecell-sage" id="sage-1"><script type="text/x-sage">A = matrix(4,5, srange(20))
+A.rref()
+</script></div>
+<div class="sagecell-sage" id="sage-2"><script type="text/x-sage">var("x,y")
+plot3d(x^2+y^2,(x,0,2),(y,0,2))
+</script></div></section></section></div></main>
 </div>
 </body>
 </html>
