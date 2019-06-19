@@ -366,7 +366,7 @@ along with MathBook XML.  If not, see <http://www.gnu.org/licenses/>.
             <subsection xml:id="subsection-version">
             <title>Version</title>
 
-            Being open-source textbooks, there may be several (maybe dozens) of implementations of your textbook on the open web. It is <em>very important</em> you and your students use the UTMOST-specified version of the text.
+            <p>Being open-source textbooks, there may be several (maybe dozens) of implementations of your textbook on the open web. It is <em>very important</em> you and your students use the UTMOST-specified version of the text.</p>
 
             <p>Different sites have been designated to use either the HTML (online) format of the textbook or the PDF (offline or printed) format. Find the relevant links below.</p>
 
