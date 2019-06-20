@@ -66,37 +66,37 @@ along with MathBook XML.  If not, see <http://www.gnu.org/licenses/>.
             </titlepage>
 
             <abstract>
-                <p>This guide is intended for faculty who have adopted a PreTeXt-authored open textbook for their class, particularly for those in the UTMOST study. It includes ideas for integrating common PreTeXt features into teaching practices as well as specific guides for users of particular textbooks. </p>
+                <p>This guide is intended for faculty who have adopted a PreTeXt-authored open textbook for their class, particularly for those in the UTMOST study. It includes ideas for integrating common PreTeXt features into teaching practices as well as specific guides for users of particular textbooks. Authors make choices on what features to use and include in their textbooks. There are some features of PreTeXT that are common across the textbooks, the possibility of linking pages, sections, or individual content units, and the possibility to integrate Sage. There are other features that are specific to each of the textbooks that are used in the project. And there are features that have been added for testing in the UTMOST research study. Each of these is described in this document. </p>
             </abstract>
 
-        </frontmatter>
 
         <introduction>
-            <p>This guide is intended for faculty who have adopted a PreTeXt-authored open textbook for their class, particularly for those in the UTMOST study. It includes ideas for integrating common PreTeXt features into teaching practices as well as specific guides for users of particular textbooks.</p>
+            <p>This guide is intended for faculty who have adopted a PreTeXt-authored open textbook for their class, particularly for those in the UTMOST study. It includes ideas for integrating common PreTeXt features into teaching practices as well as specific guides for users of particular textbooks. Authors make choices on what features to use and include in their textbooks. There are some features of PreTeXT that are common across the textbooks, the possibility of linking pages, sections, or individual content units, and the possibility to integrate Sage. There are other features that are specific to each of the textbooks that are used in the project. And there are features that have been added for testing in the UTMOST research study. Each of these is described in this document.</p>
 
-            <p>Please report broken links, typos, and other error by filing an issue at the <url href="https://github.com/drewyoungren/utmost-guides">Github repository</url></p>
+            <p>Please report broken links, typos, and other errors by filing an issue at the <url href="https://github.com/drewyoungren/utmost-guides">Github repository</url></p>
         </introduction>
+        </frontmatter>
 
         <section xml:id="section-textual">
             <title>Common PreTeXt Features</title>
 
-            <introduction><p>Not every textbook implements all of these, and not all in an identical way, but this is meant to highlight some basic capabilities for integrating structured content into the everyday teaching of a class.
+            <introduction><p>There are some basic capabilities of the PreTeXt authored textbooks that facilitate their integration in a structured way into the design of a course and in the everyday teaching of a class.
             </p> 
             </introduction>
 
 
             <subsection xml:id="subsection-linking">
             <title>Judicious Linking</title>
-            <p>The defining feature of hypertext and, perhaps, the web in general is the ability to link from one resource to another. The structure of PreTeXt is ripe for such, both internally, as you regularly see with exercises citing theorems and sections referenceing previous sections, but can also be done externally. 
+            <p>The defining feature of hypertext and, perhaps, the web in general is the ability to link from one resource to another. The structure of PreTeXt is ripe for such linking, both internally, as you regularly see with exercises citing theorems and sections referencing previous sections, and externally, as you would do if you were creating a document for your personal use. 
+            </p><p>Instructors are encouraged to link to relevant parts of the text throughout their course materials (e.g., syllabi, lecture notes, assignments) and also in their feedback to students and on discussion boards in their Learning Management Systems (LMSs). Linking is often as simple as sharing the relevant URL to the particular resource. You can identify the URLs of specific parts of the textbooks in several ways:
+ 
             </p>
-
-            <p>Instructors are encouraged to link to relevant parts of the text throughout their course materials: in syllabi, in assignments, but also in feedback to students and on dicussion boards. This is often as simple as sharing the relevant URL to the particular resource. You can find the URLs in several places: </p>
 
             <paragraphs>
             <title>Table of Contents</title>
             <sidebyside widths="65% 35%">
 
-                <p>Any section or subsection in the text can be linked to easily by simply right-clicking on the section in the table of contents and selecting "Copy Link Location" (or similar).</p>
+                <p>Instructors can add a link to any section or subsection in the textbook by simply right-clicking on the section in the table of contents and selecting "Copy Link Location" (or similar).</p>
 
                 <figure xml:id="figure-section-url"><image source="images/section-URL.png" width="50%"><description>Screenshot for copying url from table of contents.</description></image>
                 <caption>Copying URL for a subsection.</caption>
@@ -107,7 +107,7 @@ along with MathBook XML.  If not, see <http://www.gnu.org/licenses/>.
             <paragraphs>
             <title>Index</title>
                 <sidebyside widths="48% 48%">
-                <p>More granular items (technically any division with an <c>@xml:id</c> tag) can be linked to directly. An easy way to find the relevant link is to locate the item in the index. Clicking will open a small box (a "knowl") and display the item. There will be an "In Context" link in the lower right. Right-click this to copy the URL.</p>
+                <p>Instructors can add direct links to more specific items (technically any division with an @xml:id tag). An easy way to find the relevant link is to locate the item in the index of each textbook. Clicking the item in the index will open a small box (a "knowl") and display the definition of the item. Each box contains an "In Context" link in the lower right. Instructors can right-click this link to copy the URL.</p>
 
                 <figure xml:id="figure-knowl-url"><image source="images/knowl-URL.png" width="50%"><description>Screenshot for copying url from the index.</description></image>
                 <caption>Copying URL for an index item.</caption>
@@ -117,7 +117,7 @@ along with MathBook XML.  If not, see <http://www.gnu.org/licenses/>.
 
             <paragraphs>
             <title>Others</title>
-                <p>Many divisions in a PreTeXt textbook are decorated with a faint paragraph sign ¶ (known as a "pillcrow"). These are in fact links which center the browswer at that division. Once, clicked, the URL displayed in the browser's address bar can be shared. </p>
+                <p>Many divisions in a PreTeXt textbook are decorated with a faint paragraph sign ¶ (known as a "pilcrow"). These pilcrows represent links which center the browser at that division. Once clicked, the URL displayed in the browser's address bar can be copied and used in other documents. </p>
             </paragraphs>
 
             
@@ -127,7 +127,7 @@ along with MathBook XML.  If not, see <http://www.gnu.org/licenses/>.
             <subsection xml:id="subsection-sage-cells">
             <title>Sage Advice</title>
 
-            <p><url href="https://www.sagemath.org/">Sage</url> is an open source language for doing mathematics. It is designed to replicate the functionality of popular computer algebra systems (<em>Mathematica</em>, MAPLE, etc.) in a unified, open source environment. It is free and may be downloaded and run locally on a user's personal computer, but many PreTeXt authors deploy what are known as Sage Cells like those seen above. These are one-off computing environments in which snippets of code can be executed and displayed in a browser without need for any installation of software on the user's part. The code can be altered in any way the user sees fit, and the original content can be restored by reloading the page.</p>  
+            <p><url href="https://www.sagemath.org/">Sage</url> is an open source language for doing mathematics. It is designed to replicate the functionality of popular computer algebra systems (<em>Mathematica</em>, MAPLE, etc.) in a unified, open source environment. It is free and may be downloaded and run locally on a user's personal computer. Many PreTeXt authors deploy what are known as Sage Cells like those seen above. These are one-off computing environments in which snippets of code can be executed and displayed in a browser without need for any installation of software on the user's part. The code can be altered in any way the user sees fit, and the original content can be restored by reloading the page.</p>  
 
             <p>Seriously, these things are great.</p>
             <sage>
@@ -220,7 +220,7 @@ along with MathBook XML.  If not, see <http://www.gnu.org/licenses/>.
                 <introduction>
                 <sidebyside widths="25% 70%">
                 <image source="images/cover-ac.jpg"><description>Active Calculus cover.</description></image>
-                <p>This page provides complementary information to the section <url href="https://books.aimath.org/ac/preface-3.html">Features of the text</url>. Because this is a hosted version for the UTMOST project, it is important for you to be aware of a few additional features of the textbook.
+                <p>This page provides complementary information to the section <url href="https://books.aimath.org/ac/preface-3.html">Features of the Text</url>. Because this is a hosted version for the UTMOST project, it is important for you to be aware of a few additional features of the textbook. In this section we highlight four features of this textbook that users need to be aware of for course and lesson planning: the Preview Activities, the Class Activities, WeBWorK, and Solutions.
                 </p>
                 </sidebyside>
                 </introduction>
@@ -292,15 +292,25 @@ along with MathBook XML.  If not, see <http://www.gnu.org/licenses/>.
     <introduction>
     <sidebyside widths="25% 70%">
     <image source="images/cover-fcla.png"><description>FCLA cover.</description></image>
-    <p>This page provides complementary information to the section "How to Use this Book" in the <url href="https://books.aimath.org/fcla/preface-2.html">Preface</url> of the textbook. Because this is a hosted version for the UTMOST project, it is important for you to be aware of a few additional features of the textbook.
+    <p>
+    This page provides complementary information to the section "How to Use this Book" in the Preface of the textbook. 
+    
+    <!-- This page provides complementary information to the section "How to Use this Book" in the <url href="https://books.aimath.org/fcla/preface-2.html">Preface</url> of the textbook. 
+    Because this is a hosted version for the UTMOST project, it is important for you to be aware of a few additional features of the textbook. -->
     </p>
     </sidebyside>
     </introduction>
+        <paragraphs>
+            <title>Topic Order</title>
+            <p>
+            It is not recommended to change the order of the sections in the textbook because each chapter builds upon what has been done before. 
+            </p>
+        </paragraphs> 
 
         <paragraphs>
         <title>Acronyms</title>
             <p>
-            This textbook does not use numbering system for the sections. The author uses acronyms to refer to each section, as they encode information about the content. The best way to handle them is to use them in class; students do not have to memorize them; only that they can recall what theorem they use. Every chapter has annotated acronyms for definitions and theorems that remind readers the importance of each of them. Although students get anxious about this, it is not such a big deal.
+            This textbook does not use numbering system for the sections as other textbooks. The author uses acronyms to refer to each section, as they encode information about that content, that is more useful than “Theorem 5.1 is.” The best way to handle them is to use them in class continuously. Students do not have to memorize them. It is sufficient  that they can recall what theorem they may need to use. Every chapter has annotated acronyms for definitions and theorems that remind readers the importance of each of them. Although students get anxious about the many acronyms, it is not such a big deal.
             </p>
 
             <p>
@@ -317,7 +327,7 @@ along with MathBook XML.  If not, see <http://www.gnu.org/licenses/>.
         <paragraphs>
             <title>Exercises</title>
             <p>
-            This textbook has three categories of exercises: computational (labeled as C#), conceptual (labeled as M#), and theoretical (labeled as T#).
+            This textbook has three categories of exercises: computational (labeled as C), conceptual (labeled as M), and theoretical (labeled as T). The author has a particular numbering system that does not mean much. It allows adding and changing problems as needed.
             </p>
         </paragraphs>
 
@@ -331,16 +341,10 @@ along with MathBook XML.  If not, see <http://www.gnu.org/licenses/>.
         <paragraphs>
         <title>Archetypes</title>
             <p>
-            The textbook works with examples called <url href="https://books.aimath.org/fcla/appendix-A.html">Archetypes</url>, labeled with a letter, and ordered alphabetically. The Archetypes provide a range of examples that fit specific properties. They are included to serve as illustrations for how properties work or fail. They can be used to tests conjectures. The students can be encouraged to check them whenever they are learning new material. The archetypes include the relevant theorems. 
+            The textbook works with examples called <url href="https://books.aimath.org/fcla/appendix-A.html">Archetypes</url>, labeled with a letter, and ordered alphabetically. The Archetypes provide a range of examples that fit specific properties. They are included to serve as illustrations for how properties work or fail. They can be used to test conjectures. The students can be encouraged to check them whenever they are learning new material. The archetypes include the relevant theorems. 
             </p>
         </paragraphs> 
 
-        <paragraphs>
-            <title>Topic Order</title>
-            <p>
-            It is not recommended to change the order of the sections in the textbook because each chapter builds upon what has been done before. 
-            </p>
-        </paragraphs> 
 
         <paragraphs>
             <title>Sage</title>
