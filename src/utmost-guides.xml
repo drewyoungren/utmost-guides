@@ -308,6 +308,12 @@ along with MathBook XML.  If not, see <http://www.gnu.org/licenses/>.
         </paragraphs> 
 
         <paragraphs>
+        <title>Audience
+        </title>
+        <p>Proofs and proof-writing play a large role in this text as the original audience was mathematics majors. However, some instructors have chosen to deemphasize these aspects for students who may not require such rigor. It is recommended that instructors be up front with their students about expectations regarding these aspects. Similar care should be taken with some more advanced computational concepts. </p>
+        </paragraphs>
+
+        <paragraphs>
         <title>Acronyms</title>
             <p>
             This textbook does not use numbering system for the sections as other textbooks. The author uses acronyms to refer to each section, as they encode information about that content, that is more useful than “Theorem 5.1 is.” The best way to handle them is to use them in class continuously. Students do not have to memorize them. It is sufficient  that they can recall what theorem they may need to use. Every chapter has annotated acronyms for definitions and theorems that remind readers the importance of each of them. Although students get anxious about the many acronyms, it is not such a big deal.
