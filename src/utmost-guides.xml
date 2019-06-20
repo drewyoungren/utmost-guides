@@ -378,7 +378,7 @@ along with MathBook XML.  If not, see <http://www.gnu.org/licenses/>.
 
             <p>Being open-source textbooks, there may be several (maybe dozens) of implementations of your textbook on the open web. It is <em>very important</em> you and your students use the UTMOST-specified version of the text.</p>
 
-            <p>Different sites have been designated to use either the HTML (online) format of the textbook or the PDF (offline or printed) format. FPlease refer to the handout for participating instructors, which has the links to the  project textbooks (HTML and PDF) that you have to use for this project. 
+            <p>Different sites have been designated to use either the HTML (online) format of the textbook or the PDF (offline or printed) format. Please refer to the handout for participating instructors, which has the links to the  project textbooks (HTML and PDF) that you have to use for this project. 
             </p>
 
             <paragraphs>
@@ -435,9 +435,53 @@ along with MathBook XML.  If not, see <http://www.gnu.org/licenses/>.
             </subsection>
             </section>
 
+        <section xml:id="section-use-cases-lecture-notes">
+            <title>Use Cases: Lecture Notes</title>
+            
+            <introduction>
+            <p>
+            Over the various semesters of data collection, the UTMOST participating faculty has shared with us various strategies that they use to create their lecture notes. These strategies vary in terms of how much the lecture notes incorporate features of the textbooks, the medium that the instructors use to create them, and the way in which the instructors use them in the classroom. These are provided as illustrations for other UTMOST participants. The creation of the lecture notes can incorporate one or more of these strategies. Some instructors incorporate more than one textbook as they teach as well.
+            </p>
+<ul>
+    <li>
+    Handwritten lecture notes
+    </li>
+    <li>
+    Online videos
+    </li>
+    <li>
+    Beamer/Power Point lecture notes
+    </li>
+    <li>
+    PreTeXt lecture notes
+    </li>
+</ul>
+
+            </introduction>
+
+        <paragraphs>
+            <title>Handwritten Lecture Notes </title>
+            <p>These are lecture notes that the instructors write down on paper; some instructors include full text they want to write on the board as they present or that they want to make sure to say. Some instructors only write a bulleted outline to make sure that they state what they need in each lesson. These notes may include fully solved examples from the textbook or from other sources. In all cases the authors keep the same nomenclature and notation as the one used in the textbook. These notes may or may not be shared with the students. Some instructors have built in class time for students to work on some of the examples from their lecture notes. Students may work individually for a while, then share their work with their neighbors, and then with the class. As students work, some instructors wait at the front of the room, others circulate and answer questions. Instructors may demonstrate the solution and have students comment by comparing the instructor's solution to theirs.</p>
+        </paragraphs>
+
+        <paragraphs>
+            <title>Online videos</title>
+            <p>These are screen cast videos that instructors prepare with the intention to highlight points from the textbook. The video may show the instructor reading the textbook, highlighting words that need to be clarified, or explaining a definition or a theorem. The instructor may use an alternative example, include a different proof, or demonstrate a technique that is not in the textbook. These videos are distributed to the students via their syllabus or their Learning Management System; the expectation is for students to view and study the videos prior to attending class, and perhaps send some comments or answer some questions ahead of time. Class time is spent on answering questions students may have about the information on the textbook or on the video and in solving more complex problems related to the content of the section.</p>
+        </paragraphs>
+
+        <paragraphs>
+        <title>Beamer/Power Point lecture notes</title>
+        <p>These are slide presentations that instructors create ahead of time with the intention of projecting them on a screen during class. These provide the structure for the presentation, and releases the instructor of writing text that may be time consuming or prone to errors. The instructor may distribute these documents ahead of time to the students in electronic form via their Learning Management System or bring printed copies to class. Some of these lecture notes have blank space that can be filled in during the lecture with students' work or with instructor's commentaries. These can be distributed in PDF format and may include live links to specific sections of the textbook that might be shown during class as needed. Instructors may also project their printed copies of these slides using a document camera and write on them to generate a record of the class. Some instructors upload scans of the completed notes after class in their Learning Management System, so students can have a record of what was done in class.</p>
+        </paragraphs>
+
+        <paragraphs>
+            <title>PreTeXt lecture notes</title>
+            <p>If you have or plan to compose lecture notes electronically, you might consider authoring them in the PreTeXT, much as this document is. There is a small investment in getting up and running, but once going, it is fairly trivial to produce nice-looking HTML and/or PDF (via LaTeX) versions. See the <url href="http://pretextbook.org/">PreTeXt project page</url> and particularly the pretext-support Google group full of generous folks who can help you get started from scratch or with converting existing materials.</p>
+        </paragraphs>
+        </section>
 `               <!-- <section xml:id="section-further-ideas">
             <title>Further Ideas</title>
-
+        
             
             
         </section> -->
