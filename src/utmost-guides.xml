@@ -204,6 +204,8 @@ along with MathBook XML.  If not, see <http://www.gnu.org/licenses/>.
                 <sidebyside widths="25% 70%">
                 <image source="images/cover-ac.jpg"><description>Active Calculus cover.</description></image>
                 <p>This page provides complementary information to the section <url href="https://books.aimath.org/ac/preface-3.html">Features of the Text</url>.  In this section, we highlight four features of this textbook that users need to be aware of for course and lesson planning: the Preview Activities, the Class Activities, WeBWorK, and Solutions.
+
+                <!-- (((FUTURE))) This page provides complementary information to the sections Features of the Text, Students! Read This!, and Instructors! Read This!. -->
                 </p>
                 </sidebyside>
                 </introduction>
