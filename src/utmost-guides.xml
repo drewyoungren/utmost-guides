@@ -127,7 +127,7 @@ along with MathBook XML.  If not, see <http://www.gnu.org/licenses/>.
             <subsection xml:id="subsection-sage-cells">
             <title>Sage Advice</title>
 
-            <p><url href="https://www.sagemath.org/">Sage</url> is an open source language for doing mathematics. It is designed to replicate the functionality of popular computer algebra systems (<em>Mathematica</em>, MAPLE, etc.) in a unified, open source environment. It is free and may be downloaded and run locally on a user's personal computer. Many <pretext /> authors deploy what are known as Sage Cells like those seen below. These are one-off computing environments in which snippets of code can be executed and displayed in a browser without need for any installation of software on the user's part. The code can be altered in any way the user sees fit, and the original content can be restored by reloading the page.</p>  
+            <p><url href="https://www.sagemath.org/">Sage</url> is an open source language for doing mathematics. It is designed to replicate the functionality of popular computer algebra systems (<em>Mathematica</em>, MAPLE, etc.) in a unified, open source environment. It is free, and while it may be downloaded and run locally on a user's personal computer, many <pretext /> authors deploy what are known as Sage Cells which require nothing to be downloaded on the user's end. Examples can be seen below. These are one-off computing environments in which snippets of code can be executed and displayed in a browser without need for any installation of software on the user's part. The code can be altered in any way the user sees fit, and the original content can be restored by reloading the page.</p>  
 
             <p>Seriously, these things are great.</p>
             <sage>
@@ -150,7 +150,7 @@ along with MathBook XML.  If not, see <http://www.gnu.org/licenses/>.
             </sage>
 
 
-            <p>For those who wish to demonstrate or experiment further with Sage, AIM<fn>The American Institute of Mathematics is a co-sponsor of the UTMOST project.</fn> also hosts the the <url href="https://utmost.aimath.org/sage-cell-repository/">Sage Cell Repository</url>. One can compute directly on the home page or explore the <url href="http://utmost-sage-cell.org/topics">dozens of examples</url> compiled in the wiki.</p>
+            <p>For those who wish to demonstrate or experiment further with Sage, AIM<fn>The American Institute of Mathematics is a partner of the UTMOST project.</fn> also hosts the the <url href="https://utmost.aimath.org/sage-cell-repository/">Sage Cell Repository</url>. One can compute directly on the home page or explore the <url href="http://utmost-sage-cell.org/topics">dozens of examples</url> compiled in the wiki.</p>
             </subsection>
         </section>
 
@@ -439,6 +439,7 @@ along with MathBook XML.  If not, see <http://www.gnu.org/licenses/>.
         <paragraphs>
             <title><pretext /> lecture notes</title>
             <p>If you have or plan to compose lecture notes electronically, you might consider authoring them in <pretext />, much as this document is. There is a small investment in getting up and running, but once going, it is fairly trivial to produce nice-looking HTML and/or PDF (via <latex />) versions<fn>Slideshows coming soon.</fn>. See the <url href="http://pretextbook.org/"><pretext /> project page</url> and particularly the <url href="https://groups.google.com/forum/#!forum/pretext-support"><c>pretext-support</c></url> Google group, which is full of generous folks who can help you start from scratch or convert existing materials.</p>
+            <p>One tip: if using this option, consider changing the color scheme to distinguish from the textbook itself. See <url href="https://groups.google.com/forum/#!topic/pretext-announce/ljlJa1dGpSY">this post</url> for more information.</p>
         </paragraphs>
         </section>
 `               <!-- <section xml:id="section-further-ideas">
