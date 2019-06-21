@@ -65,9 +65,9 @@ along with MathBook XML.  If not, see <http://www.gnu.org/licenses/>.
                 <date><today /></date>
             </titlepage>
 
-            <abstract>
+            <!-- <abstract>
                 <p>This guide offers information for those adopting a PreTeXt-authored textbook for their classes, particulars those participating in the UTMOST project. </p>
-            </abstract>
+            </abstract> -->
 
 
         <introduction>
