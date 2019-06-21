@@ -40,7 +40,7 @@ along with MathBook XML.  If not, see <http://www.gnu.org/licenses/>.
 <!--     xsltproc -X-stringparam chunk.level 0 mathbook/xsl/mathbook-sage-doctest.xsl minimal.xml -->
 <!--     <read further instructions in> minimal.py                                                -->
 
- <mathbook>
+ <pretext>
 
     <docinfo>
         <macros>
@@ -151,6 +151,31 @@ along with MathBook XML.  If not, see <http://www.gnu.org/licenses/>.
 
 
             <p>For those who wish to demonstrate or experiment further with Sage, AIM<fn>The American Institute of Mathematics is a partner of the UTMOST project.</fn> also hosts the the <url href="https://utmost.aimath.org/sage-cell-repository/">Sage Cell Repository</url>. One can compute directly on the home page or explore the <url href="http://utmost-sage-cell.org/topics">dozens of examples</url> compiled in the wiki.</p>
+            </subsection>
+
+            <subsection xml:id="subsection-knowls">
+                <title>Knowls</title>
+                <p>Many components of a <pretext /> document are stored in "knowls". These are hyperlink-like pointers to supplemental information, but instead of opening a new webpage, they display a little box in place. Hints, solutions, and many other components are stored this way and may be hidden by default. It is recommended that instructors demonstrate these to students at the outset of the class.  </p>
+
+                <example xml:id="knowl-example">
+                <title>Knowl Example</title>
+                <statement><p>Compute the derivative <m>\frac{d}{dx}\sin(2x)</m>.</p>
+                </statement>
+                <hint> <p>
+                Use the double-angle formula, then expand each component to its Taylor series, multiply out, and differentiate term-by-term.
+                </p>
+                </hint>
+                <answer><p><m>2 \cos(2 x)</m>
+                </p>
+                </answer>
+                <solution><p>
+                <me> \sin(2 x) = 2\sin(x)\cos(x) = 2\left(\sum_{n=0}^\infty \frac{(-1)^n}{(2n+1)!}x^{2n+1}\right)\left(\sum_{n=0}^\infty \frac{(-1)^n}{(2n)!}x^{2n}\right)</me>
+                <me> = \sum_{k=0}^\infty \sum_{m+n=k} \left(\frac{(-1)^n}{(2n+1)!} + \frac{(-1)^m}{(2m)!}\right) x^{2k+1}</me>
+                Blah blah blah.
+                <me> 2\cos(2 x)</me>
+                </p>
+                </solution>
+                </example>
             </subsection>
         </section>
 
@@ -451,4 +476,4 @@ along with MathBook XML.  If not, see <http://www.gnu.org/licenses/>.
 
     </article>
 
-</mathbook>
+</pretext>
