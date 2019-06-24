@@ -127,7 +127,7 @@ along with MathBook XML.  If not, see <http://www.gnu.org/licenses/>.
             <subsection xml:id="subsection-sage-cells">
             <title>Sage Advice</title>
 
-            <p><url href="https://www.sagemath.org/">Sage</url> is an open source language for doing mathematics. It is designed to replicate the functionality of popular computer algebra systems (<em>Mathematica</em>, MAPLE, etc.) in a unified, open source environment. It is free, and while it may be downloaded and run locally on a user's personal computer, many <pretext /> authors deploy what are known as Sage Cells which require nothing to be downloaded on the user's end. Examples can be seen below. These are one-off computing environments in which snippets of code can be executed and displayed in a browser without need for any installation of software on the user's part. The code can be altered in any way the user sees fit, and the original content can be restored by reloading the page.</p>  
+            <p><url href="https://www.sagemath.org/">Sage</url> is an open source language for doing mathematics. It is designed to replicate the functionality of popular computer algebra systems (<em>Mathematica</em>, MAPLE, etc.) in a unified, open source environment. It is free, and while it may be downloaded and run locally on a user's personal computer, many <pretext /> authors deploy what are known as Sage Cells which require nothing to be downloaded on the user's end. Examples can be seen below. These are one-off computing environments in which snippets of code can be executed and displayed in a browser without the need for any installation of software on the user's part. The code can be altered in any way the user sees fit, and the original content can be restored by reloading the page.</p>  
 
             <p>Seriously, these things are great.</p>
             <sage>
@@ -239,7 +239,7 @@ along with MathBook XML.  If not, see <http://www.gnu.org/licenses/>.
 
   <paragraphs>
   <title>Preview Activities</title>
-    <p>In addition to the Reading Questions, each section begins with a Preview Activity (see, for example, <url href="https://books.aimath.org/ac/sec-5-3-substitution.html#fEx">5.3.1</url>) which is meant to be an accessible introduction to new ideas that rely largely on knowledge that students already have. Most Preview Activities can be completed in 15<ndash />20 minutes. If students are logged in to the HTML version of the text, the Preview Activities can be completed in the HTML version and the responses reviewed by the instructor.  Instructors can incentivize the completion of the Preview Activities by asking the students to put their work on their desks for review in class.
+    <p>In addition to the Reading Questions, each section begins with a Preview Activity (see, for example, <url href="https://books.aimath.org/ac/sec-5-3-substitution.html#fEx">5.3.1</url>) which is meant to be an accessible introduction to new ideas that rely largely on the knowledge that students already have. Most Preview Activities can be completed in 15<ndash />20 minutes. If students are logged in to the HTML version of the text, the Preview Activities can be completed in the HTML version and the responses reviewed by the instructor.  Instructors can incentivize the completion of the Preview Activities by asking the students to put their work on their desks for review in class.
     </p>
   </paragraphs> 
   <paragraphs>
@@ -297,7 +297,7 @@ along with MathBook XML.  If not, see <http://www.gnu.org/licenses/>.
         <paragraphs>
         <title>Audience
         </title>
-        <p>Proofs and proof-writing play a large role in this text because the original audience was mathematics majors. However, some instructors have chosen to deemphasize these aspects for students who may not require such rigor. It is recommended that instructors be up front with their students about expectations regarding these aspects. Similar care should be taken with some more advanced computational concepts. </p>
+        <p>Proofs and proof-writing play a large role in this text because the original audience was mathematics majors. However, some instructors have chosen to deemphasize these aspects for students who may not require such rigor. It is recommended that instructors be upfront with their students about expectations regarding these aspects. Similar care should be taken with some more advanced computational concepts. </p>
         </paragraphs>
 
         <paragraphs>
@@ -395,7 +395,7 @@ along with MathBook XML.  If not, see <http://www.gnu.org/licenses/>.
             <subsection xml:id="subsection-highlighting">
                 <title>Highlighting</title>
                 
-                <p>The HTML format of the textbooks allows<fn>or will allow by Fall 2019</fn> students to highlight portions of the text and have those persist across different platforms. Instructors' versions makes this available as well, though when text is highlighted, they are given the choice to highlight or simply copy the text to the clipboard.</p>
+                <p>The HTML format of the textbooks allows<fn>or will allow by Fall 2019</fn> students to highlight portions of the text and have those persist across different platforms. Instructors' versions make this available as well, though when text is highlighted, they are given the choice to highlight or simply copy the text to the clipboard.</p>
 
             </subsection>
 
