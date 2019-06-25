@@ -1,0 +1,479 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!--********************************************************************
+Copyright 2015 Robert A. Beezer
+
+This file is part of MathBook XML.
+
+MathBook XML is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 2 or version 3 of the
+License (at your option).
+
+MathBook XML is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with MathBook XML.  If not, see <http://www.gnu.org/licenses/>.
+*********************************************************************-->
+
+<!-- To process this file do                                                                      -->
+<!--                                                                                              -->
+<!-- (1) LaTeX/PDF:                                                                               -->
+<!--     xsltproc mathbook/xsl/mathbook-latex.xsl minimal.xml                                     -->
+<!--     pdflatex minimal.tex                                                                     -->
+<!--     xelatex minimal.tex                                                                      -->
+<!--                                                                                              -->
+<!-- (2) HTML:                                                                                    -->
+<!--     xsltproc mathbook/xsl/mathbook-html.xsl minimal.xml                                      -->
+<!--     <browser>  minimal.html                                                                 -->
+<!--                                                                                              -->
+<!-- (3) CoCalc worksheet (parameter causes a single file for output)                             -->
+<!--     REMOVE the "X" in the double dash (which is not legal in an XML comment)                 -->
+<!--     xsltproc -X-stringparam chunk.level 0 mathbook/xsl/mathbook-smc.xsl minimal.xml          -->
+<!--     <CoCalc> minimal.sagews                                                                  -->
+<!--                                                                                              -->
+<!-- (4) Sage doctesting                                                                          -->
+<!--     REMOVE the "X" in the double dash (which is not legal in an XML comment)                 -->
+<!--     xsltproc -X-stringparam chunk.level 0 mathbook/xsl/mathbook-sage-doctest.xsl minimal.xml -->
+<!--     <read further instructions in> minimal.py                                                -->
+
+ <pretext>
+
+    <docinfo>
+        <macros>
+        \newcommand{\doubler}[1]{2#1}
+        </macros>
+    </docinfo>
+
+    <article xml:id="uig">
+        <title>UTMOST Instructors Guide</title>
+
+        <frontmatter>
+
+            <titlepage>
+                <author>
+                    <personname>Vilma Mesa</personname>
+                    <institution>University of Michigan</institution>
+                </author>
+                <author>
+                    <personname>Drew C Youngren</personname>
+                    <institution>Columbia University</institution>
+                </author>
+                <date><today /></date>
+            </titlepage>
+
+            <!-- <abstract>
+                <p>This guide offers information for those adopting a PreTeXt-authored textbook for their classes, particulars those participating in the UTMOST project. </p>
+            </abstract> -->
+
+
+        <introduction>
+            <p>This guide is intended for faculty who have adopted a PreTeXt-authored open textbook for their class, particularly for those in the UTMOST study. It includes ideas for integrating common <pretext /> features into teaching practices as well as specific guides for users of particular textbooks. Authors make choices on what features to use and include in their textbooks. There are some features of <pretext /> that are common across the textbooks, the possibility of linking pages, sections, or individual content units, and the possibility to integrate Sage. There are other features that are specific to each of the textbooks that are used in the project. And there are features that have been added for testing in the UTMOST research study. Each of these is described in this document.</p>
+
+            <p>Please report broken links, typos, and other errors by filing an issue at the <url href="https://github.com/drewyoungren/utmost-guides">Github repository</url></p>
+        </introduction>
+        </frontmatter>
+
+        <section xml:id="section-textual">
+            <title>Common <pretext /> Features</title>
+
+            <introduction><p>There are some basic capabilities of the PreTeXt-authored textbooks that facilitate their integration in a structured way into the design of a course and in the everyday teaching of a class.
+            </p> 
+            </introduction>
+
+
+            <subsection xml:id="subsection-linking">
+            <title>Judicious Linking</title>
+            <p>The defining feature of hypertext<mdash />and, perhaps, the web in general<mdash />is the ability to link from one resource to another. The structure of <pretext /> is ripe for such linking, both internally, as you regularly see with exercises citing theorems and sections referencing previous sections, and externally, as you would do if you were creating a document for your personal use. 
+            </p><p>Instructors are encouraged to link to relevant parts of the text throughout their course materials (e.g., syllabi, lecture notes, assignments) and also in their feedback to students and on discussion boards in their Learning Management Systems (LMSs). Linking is often as simple as sharing the relevant URL to the particular resource. You can identify the URLs of specific parts of the textbooks in several ways:
+ 
+            </p>
+
+            <paragraphs>
+            <title>Table of Contents</title>
+            <sidebyside widths="65% 35%">
+
+                <p>Instructors can add a link to any section or subsection in the textbook by simply right-clicking on the section in the table of contents and selecting "Copy Link Location" (or similar).</p>
+
+                <figure xml:id="figure-section-url"><image source="images/section-URL.png" width="50%"><description>Screenshot for copying url from table of contents.</description></image>
+                <caption>Copying URL for a subsection.</caption>
+                </figure>
+                </sidebyside>
+            </paragraphs>
+ 
+            <paragraphs>
+            <title>Index</title>
+                <sidebyside widths="48% 48%">
+                <p>Instructors can add direct links to more specific items (technically, any division with an <c>@xml:id</c> tag). An easy way to find the relevant link is to locate the item in the index of each textbook. Clicking the item in the index will open a small box (a "knowl") and display the definition of the item. Each box contains an "In Context" link in the lower right. Instructors can right-click this link to copy the URL.</p>
+
+                <figure xml:id="figure-knowl-url"><image source="images/knowl-URL.png" width="50%"><description>Screenshot for copying url from the index.</description></image>
+                <caption>Copying URL for an index item.</caption>
+                </figure>
+                </sidebyside>
+            </paragraphs>
+
+            <paragraphs>
+            <title>Others</title>
+                <p>Many divisions in a <pretext /> textbook are decorated with a faint paragraph sign ¶ (known as a "pilcrow"). These pilcrows represent links which center the browser at that division. Once clicked, the URL displayed in the browser's address bar can be copied and used in other documents. </p>
+            </paragraphs>
+
+            
+
+            </subsection>
+
+            <subsection xml:id="subsection-sage-cells">
+            <title>Sage Advice</title>
+
+            <p><url href="https://www.sagemath.org/">Sage</url> is an open source language for doing mathematics. It is designed to replicate the functionality of popular computer algebra systems (<em>Mathematica</em>, MAPLE, etc.) in a unified, open source environment. It is free, and while it may be downloaded and run locally on a user's personal computer, many <pretext /> authors deploy what are known as Sage Cells which require nothing to be downloaded on the user's end. Examples can be seen below. These are one-off computing environments in which snippets of code can be executed and displayed in a browser without need for any installation of software on the user's part. The code can be altered in any way the user sees fit, and the original content can be restored by reloading the page.</p>  
+
+            <p>Seriously, these things are great.</p>
+            <sage>
+                <input>
+                A = matrix(4,5, srange(20))
+                A.rref()
+                </input>
+                <output>
+                [ 1  0 -1 -2 -3]
+                [ 0  1  2  3  4]
+                [ 0  0  0  0  0]
+                [ 0  0  0  0  0]
+                </output>
+            </sage>
+            <sage>
+                <input>
+                var("x,y")
+                plot3d(x^2+y^2,(x,0,2),(y,0,2))
+                </input>
+            </sage>
+
+
+            <p>For those who wish to demonstrate or experiment further with Sage, AIM<fn>The American Institute of Mathematics is a partner of the UTMOST project.</fn> also hosts the the <url href="https://utmost.aimath.org/sage-cell-repository/">Sage Cell Repository</url>. One can compute directly on the home page or explore the <url href="http://utmost-sage-cell.org/topics">dozens of examples</url> compiled in the wiki.</p>
+            </subsection>
+
+            <subsection xml:id="subsection-knowls">
+                <title>Knowls</title>
+                <p>Many components of a <pretext /> document are stored in "knowls". These are hyperlink-like pointers to supplemental information, but instead of opening a new webpage, they display a little box in place. Hints, solutions, and many other components are stored this way and may be hidden by default. It is recommended that instructors demonstrate these to students at the outset of the class.  </p>
+
+                <example xml:id="knowl-example">
+                <title>Knowl Example</title>
+                <statement><p>Compute the derivative <m>\frac{d}{dx}\sin(2x)</m>.</p>
+                </statement>
+                <hint> <p>
+                Use the double-angle formula, then expand each component to its Taylor series, multiply out, and differentiate term-by-term.
+                </p>
+                </hint>
+                <answer><p><m>2 \cos(2 x)</m>
+                </p>
+                </answer>
+                <solution><p>
+                <me> \sin(2 x) = 2\sin(x)\cos(x) = 2\left(\sum_{n=0}^\infty \frac{(-1)^n}{(2n+1)!}x^{2n+1}\right)\left(\sum_{n=0}^\infty \frac{(-1)^n}{(2n)!}x^{2n}\right)</me>
+                <me> = \sum_{k=0}^\infty \sum_{m+n=k} \left(\frac{(-1)^k}{(2n+1)!(2m)!}\right) x^{2k+1}</me>
+                Blah blah blah.
+                <me> 2\cos(2 x)</me>
+                </p>
+                </solution>
+                </example>
+            </subsection>
+        </section>
+
+        
+
+            <section xml:id="section-textbook-specifics">
+            <title>Textbook-Specific Information</title>
+            <introduction><p>This section provides specific information and author recommendations for adopters of the specific textbooks in the project. </p></introduction>
+
+            <subsection xml:id="subsection-aata">
+                <title>
+                    Abstract Algebra: Theory and Applications
+                </title>
+
+                <introduction>
+                <sidebyside widths="25% 70%">
+                <image source="images/cover-aata.png"><description>AATA cover.</description></image>
+                <p>This is meant to supplement information found in the <url href="https://books.aimath.org/aata/preface-1.html">Preface</url>.
+                </p>
+                </sidebyside>
+                </introduction>
+
+                    <paragraphs>
+                        <title>Syllabus</title>
+                        <p>Be selective in what you cover in your course. This includes the sections of the textbook as well as the Sage exercises. You can use the chapter diagram that is presented in the <url href="https://books.aimath.org/aata/preface-1.html">Preface</url> to make decisions about what to include or exclude.</p>
+                    </paragraphs>
+
+
+                    <paragraphs>
+                    <title>Sage</title>
+
+
+                    <p> The HTML format of the textbook takes advantage of the Sage programming language. To become acquainted with Sage, see <url href="https://books.aimath.org/aata/sets-sage.html">how this textbook uses Sage</url>.  Instructors can either assign this section to the students, or spend some time in class to illustrate how Sage works.
+                    </p>  
+                    <p>Each section of the HTML format of textbook contains Sage exercises.  These exercises vary in complexity. The goal of the exercises is to get users to use technology to explore structures and make conjectures that would be very difficult to explore by hand computation. For example, the <url href="https://books.aimath.org/aata/cyclic-sage-exercises.html">Sage Exercises in Cyclic Groups</url> were written to help readers explore the cyclic patterns of the group of units mod <m>n</m>, <m>U(n)</m>, which is sometimes cyclic, sometimes not. By using Sage, users can easily test whether or not the <m>U(n)</m> is cyclic for large values of <m>n</m> and then make a conjecture about what the general case should be.</p>  
+                    </paragraphs>
+
+                <paragraphs xml:id="paragraphs-reference">
+                    <title>Reference</title>
+                    <p>This textbook includes a <url href="https://books.aimath.org/aata/backmatter.html">Reference</url> section that includes appendices and the index. Of particular note is the Notation appendix which includes a list of symbolic notation and links to their occurrences in the text.</p>
+                </paragraphs>
+            </subsection>
+
+
+            <subsection xml:id="subsection-ac">
+                <title>
+                    Active Calculus
+                </title>
+
+                <introduction>
+                <sidebyside widths="25% 70%">
+                <image source="images/cover-ac.jpg"><description>Active Calculus cover.</description></image>
+                <p>This page provides complementary information to the section <url href="https://books.aimath.org/ac/preface-3.html">Features of the Text</url>.  In this section, we highlight four features of this textbook that users need to be aware of for course and lesson planning: the Preview Activities, the Class Activities, WeBWorK, and Solutions.
+
+                <!-- (((FUTURE))) This page provides complementary information to the sections Features of the Text, Students! Read This!, and Instructors! Read This!. -->
+                </p>
+                </sidebyside>
+                </introduction>
+
+
+
+  <paragraphs>
+  <title>Preview Activities</title>
+    <p>In addition to the Reading Questions, each section begins with a Preview Activity (see, for example, <url href="https://books.aimath.org/ac/sec-5-3-substitution.html#fEx">5.3.1</url>) which is meant to be an accessible introduction to new ideas that rely largely on knowledge that students already have. Most Preview Activities can be completed in 15<ndash />20 minutes. If students are logged in to the HTML version of the text, the Preview Activities can be completed in the HTML version and the responses reviewed by the instructor.  Instructors can incentivize the completion of the Preview Activities by asking the students to put their work on their desks for review in class.
+    </p>
+  </paragraphs> 
+  <paragraphs>
+      <title>Class Activities</title>
+      <p>
+        Each section in the textbook has three Activities (e.g., <url href="https://books.aimath.org/ac/sec-1-3-derivative-pt.html#Mtw">Activity 1.3.2</url>) that are designed for being done in class by students. There is a PDF Activities Workbook that can be printed so students can use it to work on in class. 
+      </p>
+ 
+  </paragraphs> 
+
+
+  <paragraphs><title>WeBWorK</title>
+      <p>
+        Almost every Exercises section of the HTML format of the textbook includes anonymous WeBWorK exercises that students can complete and receive immediate feedback on<mdash />with unlimited attempts and without penalty ("anonymous" here means students' work is not recorded anywhere). The WeBWorK exercises are intended to be more routine than the following non-WeBWorK exercises. 
+      </p>
+  </paragraphs>
+  <!-- <paragraphs>
+  <title>Exercises</title>
+      <p>
+        All Exercises sections include non-WeBWorK problems that are more complex as they seek to connect multiple ideas, challenge students, and encourage them to write. 
+      </p>
+  </paragraphs> -->
+    <paragraphs>
+    <title>Solutions</title>
+      <p>
+        This textbook includes an instructor's solution manual with answers and solutions to each Activity and non-WeBWorK exercise in the text. The answers are available in the publicly posted electronic versions (both HTML and PDF).  The solutions manual is only available to instructors by direct request by email to the author (boelkinm at gvsu dot edu).
+      </p>
+      </paragraphs>
+
+    </subsection>
+
+<subsection xml:id="subsection-fcla">
+    <title> 
+        A First Course in Linear Algebra
+    </title>
+
+    <introduction>
+    <sidebyside widths="25% 70%">
+    <image source="images/cover-fcla.png"><description>FCLA cover.</description></image>
+    <p>
+    This page provides complementary information to the section "How to Use this Book" in the Preface of the textbook. 
+    
+    <!-- This page provides complementary information to the section "How to Use this Book" in the <url href="https://books.aimath.org/fcla/preface-2.html">Preface</url> of the textbook. 
+    Because this is a hosted version for the UTMOST project, it is important for you to be aware of a few additional features of the textbook. -->
+    </p>
+    </sidebyside>
+    </introduction>
+        <paragraphs>
+            <title>Topic Order</title>
+            <p>
+            It is not recommended to change the order of the sections in the textbook because each chapter builds upon what has been done before. 
+            </p>
+        </paragraphs> 
+
+        <paragraphs>
+        <title>Audience
+        </title>
+        <p>Proofs and proof-writing play a large role in this text because the original audience was mathematics majors. However, some instructors have chosen to deemphasize these aspects for students who may not require such rigor. It is recommended that instructors be up front with their students about expectations regarding these aspects. Similar care should be taken with some more advanced computational concepts. </p>
+        </paragraphs>
+
+        <paragraphs>
+        <title>Acronyms</title>
+            <p>
+            This textbook does not use a numbering system for the sections as many other textbooks do. The author uses acronyms to refer to each section, as they encode information about that content; this is more useful than “Theorem 5.1 is...” The best way to handle them is to use them in class continuously. Students do not have to memorize them. It is sufficient  that they can recall what theorem they may need to use. Every chapter has Annotated Acronyms for definitions and theorems that remind readers of the importance of each of them. Although students get anxious about the many acronyms, it is not such a big deal.
+            </p>
+
+            <p>
+                Of great help to both instructors and students is the <url href="https://books.aimath.org/fcla/reference.html">Reference</url> chapter. It is organized by the major sections of the textbook. Each section contains all the symbols and terminology used in that section, with a knowl that provides its definition and an "in context" link. Each of these sections is searchable.
+            </p>
+            </paragraphs>
+            
+
+        <paragraphs>
+            <title>Exercises</title>
+            <p>
+            This textbook has three categories of exercises: computational (labeled as C<octothorpe />), conceptual (labeled as M), and theoretical (labeled as T). The author has a particular numbering system that does not mean much. It allows adding and changing problems as needed.
+            </p>
+        </paragraphs>
+
+        <paragraphs>
+            <title>Proof Techniques</title>
+            <p>
+            The textbook contains a chapter on <url href="https://books.aimath.org/fcla/appendix-PT.html">Proof Techniques</url> that has been included to support students as they build their proving skills. Instructors can remind the students of the techniques that are available and explained in this chapter.  
+            </p>
+        </paragraphs>
+
+        <paragraphs>
+        <title>Archetypes</title>
+            <p>
+            The textbook works with examples called <url href="https://books.aimath.org/fcla/appendix-A.html">Archetypes</url>; they are labeled with a letter and ordered alphabetically. The Archetypes provide a range of examples that fit specific properties. They are included to serve as illustrations for how properties work or fail. They can be used to test conjectures. The students can be encouraged to check them whenever they are learning new material. The Archetypes include the relevant theorems. 
+            </p>
+        </paragraphs> 
+
+
+        <paragraphs>
+            <title>Sage</title>
+            <p>
+            The textbook makes heavy use of Sage cells (there are 96 vignettes with Sage cells, a list of which can be found in the  <url href="https://books.aimath.org/fcla/appendix-SL.html">Sage appendix</url><fn><c>books.aimath.org/fcla/appendix-SL.html</c></fn>). These are intended to help students learn to use Sage to do linear algebra and to learn how to do linear algebra by using computational examples. There is a separate <url href="https://github.com/rbeezer/sla">GitHub repository</url> that contains 17 Sage worksheets that instructors can use in class (in several output formats, including Jupyter, PDF, etc.).  They are "incomplete" and are meant to be filled in during class. For some examples, random elements are generated; in others, a carefully constructed example is explicitly defined. There is a <url href="https://github.com/rbeezer/sla/blob/master/worksheets/overview.pdf">master document</url> with a short description and the expected duration (usually between 5 and 20 minutes) for each. Instructors can do them in class; they can see many different examples in class.</p> 
+            <!-- <p>((((NEEDS EDITING In exams, the students can be asked to analyze 7x7 matrices; in a website they can cut and paste (reduce echelon form, factor,... eigenvalues.,,, determinant). the instructions in the exam indicates what operations they can use; they can use Sage to check their work. Students need to learn really well the syntax for entering the command during the exam.))))
+            </p> -->
+            </paragraphs>
+
+
+    </subsection>
+
+
+</section>
+
+<section xml:id="section-utmost-specifics">
+            <title>UTMOST-Specific Information</title>
+
+            <introduction>
+            <p>This guide is intended for instructors at test sites participating in the UTMOST project (hence, the use of second person). It will not be relevant to general textbook users because these features have been activated only for the UTMOST participants. </p> 
+            </introduction>
+
+            <subsection xml:id="subsection-version">
+            <title>Textbook Formats and Versions</title>
+
+            <p>Being open-source textbooks, there may be several (maybe dozens) of implementations of your textbook on the open web. It is <em>very important</em> you and your students use the UTMOST-specified version of the text.</p>
+
+            <p>Different sites have been designated to use either the HTML (online) format of the textbook or the PDF (offline or printed) format. Please refer to the handout for participating instructors, which has the links to the  project textbooks (HTML and PDF) that you have to use for this project. 
+            </p>
+
+            <paragraphs>
+            <title>HTML Format</title>
+            <!-- <p>
+            <ul>
+                <li><url href="https://books.aimath.org/aata/">Abstract Algebra: Theory and Applications</url></li>
+                <li><url href="https://books.aimath.org/ac/">Active Calculus</url></li>
+                <li><url href="https://books.aimath.org/fcla/">A First Course in Linear Algebra</url></li>
+            </ul>
+            </p> -->
+
+            <p>You and your students will be given logins for the AIM-hosted version of your textbook. As mentioned, it is crucially important that you use and bookmark this version. The login should persist on a given device so that frequent logging in will be unnecessary. </p>
+            </paragraphs>
+
+            <paragraphs>
+            <title>PDF Format</title>
+            <p>
+            Please download and point your students to the versions of the PDF textbooks as linked on your handout for participating instructors. 
+            </p>
+             <!-- <p>
+            <ul>
+                <li><url href="">Abstract Algebra: Theory and Applications</url></li>
+                <li><url href="">Active Calculus</url></li>
+                <li><url href="">A First Course in Linear Algebra</url></li>
+            </ul>
+            </p> -->
+            </paragraphs>
+
+            </subsection>
+
+            <subsection xml:id="subsection-highlighting">
+                <title>Highlighting</title>
+                
+                <p>The HTML format of the textbooks allows<fn>or will allow by Fall 2019</fn> students to highlight portions of the text and have those persist across different platforms. Instructors' versions makes this available as well, though when text is highlighted, they are given the choice to highlight or simply copy the text to the clipboard.</p>
+
+            </subsection>
+
+            <subsection xml:id="subsection-reading-questions">
+            <title>Reading Questions</title>
+            
+            <p>As you cover material in various parts of the book, it is important you assign the Reading Questions for the relevant sections. The authors have written them as a quick check on readers' comprehension after first encountering the material of a section. These can be of great help to the researchers, the instructor, and, indeed, the students themselves. It is at the instructor's discretion exactly when and how to assign these, but it is highly recommended that instructors provide incentives (e.g., extra credit for completing a certain number before a certain time) for students to complete them. There are small differences in how they can be implemented, depending on what format of the textbook you are using.  </p>
+
+            <p><em>**Note for Active Calculus adopters**</em> The author recommends assigning the Preview Activities for this purpose rather than the Reading Questions. 
+            </p>
+
+            <paragraphs>
+            <title>HTML Format</title>
+            <p>The HTML format of the textbooks allows students to answer the Reading Questions directly through their browsers. Students can change their responses before they submit them; each section has a tutorial on how to write math that it is straightforward to use. Once the students submit their answers, instructors can see them in their textbook <fn>Instructors and students using <em>Active Calculus</em> have this functionality for Preview Activities.</fn>. A quick scan of the responses can inform the instructor if some material requires further attention. Researchers will receive and analyze anonymized copies of student responses. You will be able to track who has responded and use that information for assigning extra credit if you chose to do that.</p>
+
+        
+            </paragraphs>
+
+            <paragraphs>
+        <title>PDF Format</title>
+            <p> The PDF format of the textbooks don’t have Reading Questions. They  are distributed separately to instructors (in the participating instructors’ directions). We suggest that you set up a system, perhaps with your Learning Management System platform, so that students can input their responses there. Many systems (e.g., Canvas) have a "Discussions" tool in which the Reading Questions can be posted as prompts that students use to reply to. The system can be set up so that students can’t see their peers' responses unless they have provided their own. </p>
+            </paragraphs>
+
+            </subsection>
+            </section>
+
+        <section xml:id="section-use-cases-lecture-notes">
+            <title>Use Cases: Lecture Notes</title>
+            
+            <introduction>
+            <p>
+            Over the various semesters of data collection, the UTMOST participating faculty has shared with us various strategies that they use to create their lecture notes. These strategies vary in terms of how much the lecture notes incorporate features of the textbooks, the medium that the instructors use to create them, and the way in which the instructors use them in the classroom. These are provided as illustrations for other UTMOST participants. The creation of the lecture notes can incorporate one or more of these strategies. Some instructors incorporate more than one textbook as they teach as well.
+            </p>
+<ul>
+    <li>
+    Handwritten lecture notes
+    </li>
+    <li>
+    Online videos
+    </li>
+    <li>
+    Beamer/PowerPoint lecture notes
+    </li>
+    <li>
+    <pretext /> lecture notes
+    </li>
+</ul>
+
+            </introduction>
+
+        <paragraphs>
+            <title>Handwritten Lecture Notes </title>
+            <p>These are lecture notes that the instructors write down on paper; some instructors include full text they want to write on the board as they present or that they want to make sure to say. Some instructors only write a bulleted outline to make sure that they state what they need in each lesson. These notes may include fully solved examples from the textbook or from other sources. In all cases, the authors keep the same nomenclature and notation as the one used in the textbook. These notes may or may not be shared with the students. Some instructors have built in class time for students to work on some of the examples from their lecture notes. Students may work individually for a while, then share their work with their neighbors, and then with the class. As students work, some instructors wait at the front of the room; others circulate and answer questions. Instructors may demonstrate the solution and have students comment by comparing the instructor's solution to theirs.</p>
+        </paragraphs>
+
+        <paragraphs>
+            <title>Online videos</title>
+            <p>These are screen cast videos that instructors prepare with the intention to highlight points from the textbook. The video may show the instructor reading the textbook, highlighting words that need to be clarified, or explaining a definition or a theorem. The instructor may use an alternative example, include a different proof, or demonstrate a technique that is not in the textbook. These videos are distributed to the students via their syllabus or their Learning Management System; the expectation is for students to view and study the videos prior to attending class, and perhaps send some comments or answer some questions ahead of time. Class time is spent on answering questions students may have about the information on the textbook or on the video and in solving more complex problems related to the content of the section.</p>
+        </paragraphs>
+
+        <paragraphs>
+        <title>Beamer/PowerPoint lecture notes</title>
+        <p>These are slide presentations that instructors create ahead of time with the intention of projecting them on a screen during class. These provide the structure for the presentation, and release the instructor of writing text that may be time-consuming or prone to errors. The instructor may distribute these documents ahead of time to the students in electronic form via their Learning Management System or bring printed copies to class. Some of these lecture notes have blank space that can be filled in during the lecture with students' work or with instructor's commentaries. These can be distributed in PDF format and may include live links to specific sections of the textbook that might be shown during class as needed. Instructors may also project their printed copies of these slides using a document camera and write on them to generate a record of the class. Some instructors upload scans of the completed notes after class in their Learning Management System so that students can have a record of what was done in class.</p>
+        </paragraphs>
+
+        <paragraphs>
+            <title><pretext /> lecture notes</title>
+            <p>If you have or plan to compose lecture notes electronically, you might consider authoring them in <pretext />, much as this document is. There is a small investment in getting up and running, but once going, it is fairly trivial to produce nice-looking HTML and/or PDF (via <latex />) versions<fn>Slideshows coming soon.</fn>. See the <url href="http://pretextbook.org/"><pretext /> project page</url> and particularly the <url href="https://groups.google.com/forum/#!forum/pretext-support"><c>pretext-support</c></url> Google group, which is full of generous folks who can help you start from scratch or convert existing materials.</p>
+            <p>One tip: if using this option, consider changing the color scheme to distinguish from the textbook itself. See <url href="https://groups.google.com/forum/#!topic/pretext-announce/ljlJa1dGpSY">this post</url> for more information.</p>
+        </paragraphs>
+        </section>
+`               <!-- <section xml:id="section-further-ideas">
+            <title>Further Ideas</title>
+        
+            
+            
+        </section> -->
+
+    </article>
+
+</pretext>
